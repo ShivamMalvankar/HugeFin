@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="HugeFin Finance & Consultants — India's Premier Capital Advisory Firm specializing in Real Estate Funding, Corporate Finance, Trade Finance and Private Funding.">
+<meta name="description" content="HugeFin Finance & Consultants - India's Premier Capital Advisory Firm specializing in Real Estate Funding, Corporate Finance, Trade Finance and Private Funding.">
 <meta name="keywords" content="HugeFin, Capital Advisory, Real Estate Funding, Corporate Finance, Trade Finance, Private Funding, Infrastructure Finance">
 <meta property="og:title" content="HugeFin Finance & Consultants">
 <meta property="og:description" content="Institutional-Grade Capital Advisory & Strategic Funding Solutions">
@@ -35,7 +35,13 @@
   --radius-lg: 24px;
   --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-
+:root {
+  --container-width: 1500px;
+}
+.container-wide{
+    width:min(var(--container-width), calc(100% - 100px));
+    margin-inline:auto;
+}
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 a {
   color: inherit;
@@ -81,16 +87,14 @@ body {
 nav {
   position: fixed; top: 0; left: 0; right: 0;
   z-index: 1000;
-  padding: 14px 20px;
+  padding:18px 40px;
   display: flex; align-items: center; justify-content: space-between;
   transition: all 0.4s ease;
 }
-nav.scrolled {
-  background: rgba(--slate-dark);
-  backdrop-filter: blur(20px);
-   padding: 14px 20px;
-  box-shadow: 0 2px 30px rgba(0,0,0,0.08);
-  border-bottom: 1px solid var(--border);
+nav.scrolled{
+  background:rgba(--slate-dark);
+  backdrop-filter:blur(20px);
+  padding:14px 40px;
 }
 .nav-logo { height: 120px; transition: height 0.4s; cursor: pointer; }
 nav.scrolled .nav-logo { height: 70px; }
@@ -179,17 +183,26 @@ nav.scrolled .hamburger span { background: var(--slate-dark); }
 }
 .hero-grid-overlay {
   position: absolute; inset: 0;
-  background-image: 
+  background-image:
     linear-gradient(rgba(0,200,58,0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0,200,58,0.05) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 .hero-content {
-  position: relative; z-index: 2;
-  max-width: 1280px; margin: 0 auto;
-  padding: 0 60px; padding-top: 120px;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
-  width: 100%;
+  position: relative;
+  z-index: 2;
+
+  width: min(1500px, calc(100% - 100px));
+
+  margin-inline: auto;
+
+  padding-top: 40px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+   n-items:center;
 }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
@@ -203,7 +216,7 @@ nav.scrolled .hamburger span { background: var(--slate-dark); }
 @keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(0,200,58,0.4)} 50%{box-shadow:0 0 0 6px rgba(0,200,58,0)} }
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(40px, 5vw, 68px);
+  font-size: clamp(42px, 4.2vw, 72px);
   font-weight: 800; line-height: 1.08;
   color: var(--white); margin-bottom: 24px;
   opacity: 0; animation: fadeUp 0.8s ease 0.7s forwards;
@@ -218,6 +231,33 @@ nav.scrolled .hamburger span { background: var(--slate-dark); }
   display: flex; gap: 16px; flex-wrap: wrap;
   opacity: 0; animation: fadeUp 0.8s ease 1.1s forwards;
 }
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  padding: 4px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  transition: all 0.4s ease;
+}
+
+nav.scrolled {
+  background: rgba(--slate-dark);
+  backdrop-filter: blur(20px);
+
+  padding: 4px 40px;
+
+  box-shadow: 0 2px 30px rgba(0,0,0,0.08);
+  border-bottom: 1px solid var(--border);
+}
+
 .btn-primary {
   display: inline-flex; align-items: center; gap: 10px;
   background: var(--green); color: var(--white);
@@ -297,7 +337,9 @@ nav.scrolled .hamburger span { background: var(--slate-dark); }
 .trust-divider { width: 1px; height: 30px; background: var(--border); }
 
 /* ============ SECTIONS BASE ============ */
-section { padding: 100px 60px; }
+section {
+  padding: 100px 40px;
+}
 .container { max-width: 1280px; margin: 0 auto; }
 .section-tag {
   display: inline-flex; align-items: center; gap: 8px;
@@ -327,7 +369,7 @@ section { padding: 100px 60px; }
   border-radius: var(--radius-lg); overflow: hidden;
 }
 .stat-card {
-  background: rgba(38,50,56,0.95);
+  background: rgba(--slate-dark);
   padding: 48px 40px;
   text-align: center;
   position: relative; overflow: hidden;
@@ -569,7 +611,7 @@ section { padding: 100px 60px; }
   content: ''; position: absolute;
   top: -200px; right: -200px;
   width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(0,200,58,0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(--slate-dark) 0%, transparent 70%);
   border-radius: 50%;
 }
 .cta-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 60px; align-items: center; }
@@ -608,6 +650,10 @@ section { padding: 100px 60px; }
 .form-group textarea { resize: vertical; min-height: 120px; }
 .form-submit { width: 100%; padding: 16px; border-radius: 10px; background: var(--green); color: white; font-size: 16px; font-weight: 600; border: none; cursor: pointer; transition: all 0.3s; font-family: var(--font-body); }
 .form-submit:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: var(--shadow-green); }
+.form-submit:disabled { cursor: not-allowed; opacity: 0.88; transform: none; box-shadow: none; }
+.form-status { min-height: 20px; margin-top: 14px; font-size: 14px; color: var(--slate); }
+.form-status.success { color: var(--green-dark); font-weight: 600; }
+.form-status.error { color: #B42318; font-weight: 600; }
 
 /* ============ FOOTER ============ */
 footer {
@@ -630,7 +676,7 @@ footer {
 .footer-links { display: flex; flex-direction: column; gap: 12px; }
 .footer-links a { font-size: 14px; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.3s; display: flex; align-items: center; gap: 6px; }
 .footer-links a:hover { color: var(--green); }
-.footer-links a::before { content: '→'; font-size: 10px; opacity: 0; transition: opacity 0.3s; }
+.footer-links a::before { content: '->'; font-size: 10px; opacity: 0; transition: opacity 0.3s; }
 .footer-links a:hover::before { opacity: 1; }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 32px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
 .footer-copy { font-size: 13px; color: rgba(255,255,255,0.3); }
@@ -654,6 +700,18 @@ footer {
 .reveal-right.visible { opacity: 1; transform: translateX(0); }
 
 /* ============ RESPONSIVE ============ */
+@media (min-width:1800px){
+
+  .hero-content,
+  .container,
+  .trust-inner,
+  .stats-grid,
+  .cta-inner{
+      max-width:1600px;
+      margin-inline:auto;
+  }
+
+}
 @media (max-width: 1100px) {
   nav, section, .stats-section, .cta-section, footer { padding-left: 40px; padding-right: 40px; }
   nav.scrolled { padding-left: 40px; padding-right: 40px; }
@@ -717,6 +775,556 @@ img { max-width: 100%; }
 }
 .back-to-top.visible { opacity: 1; transform: translateY(0); }
 .back-to-top:hover { background: var(--green-dark); transform: translateY(-3px); }
+
+@media (min-width:1800px){
+
+  .hero-content,
+  .container,
+  .trust-inner,
+  .stats-grid,
+  .cta-inner{
+      max-width:1600px;
+      margin-inline:auto;
+  }
+
+}
+.hero-content {
+  grid-template-columns: 1fr;
+  padding-top: 100px;
+}
+.hero-content {
+  grid-template-columns: 1fr;
+  width: calc(100% - 40px);
+  padding-top: 100px;
+}
+/* === HUGEFIN HOMEPAGE NAV SYNC === */
+nav#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 18px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  max-width: none;
+  margin: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  transition: all 0.4s ease;
+}
+nav#navbar.scrolled {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.08);
+  padding: 14px 40px;
+}
+nav#navbar > a:first-child {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+nav#navbar .nav-logo {
+  height: 120px;
+  width: auto;
+  display: block;
+  cursor: pointer;
+  filter: none;
+  transition: height 0.4s ease, filter 0.4s ease;
+}
+nav#navbar.scrolled .nav-logo { height: 70px; }
+nav#navbar .nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+  margin: 0 0 0 auto;
+  padding: 0;
+  list-style: none;
+}
+nav#navbar .nav-links a {
+  position: relative;
+  padding: 0;
+  border-radius: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--white, #fff);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  text-transform: none;
+  text-shadow: none;
+  white-space: nowrap;
+  transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+nav#navbar.scrolled .nav-links a { color: var(--slate-dark, #101820); }
+nav#navbar .nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--green, #00c83a);
+  transition: width 0.3s ease;
+}
+nav#navbar .nav-links a:hover,
+nav#navbar .nav-links a.active { color: var(--green, #00c83a); }
+nav#navbar .nav-links a:hover::after,
+nav#navbar .nav-links a.active::after { width: 100%; }
+nav#navbar .nav-links .nav-cta {
+  background: var(--green, #00c83a);
+  color: var(--white, #fff) !important;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(0, 200, 58, 0.3);
+}
+nav#navbar .nav-links .nav-cta:hover {
+  background: var(--green-dark, #008f2f);
+  color: var(--white, #fff) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 200, 58, 0.4);
+}
+nav#navbar .nav-links .nav-cta::after { display: none; }
+nav#navbar .hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  margin: 0;
+  border: 0;
+  background: transparent;
+}
+nav#navbar .hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--white, #fff);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+nav#navbar.scrolled .hamburger span { background: var(--slate-dark, #101820); }
+nav#navbar .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+nav#navbar .hamburger.active span:nth-child(2) { opacity: 0; }
+nav#navbar .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: min(320px, 86vw);
+  height: 100vh;
+  background: var(--white, #fff);
+  z-index: 999;
+  padding: 100px 40px 40px;
+  box-shadow: -10px 0 60px rgba(0, 0, 0, 0.15);
+  transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.mobile-menu.open { right: 0; }
+.mobile-menu a {
+  display: block;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border, #e5e7eb);
+  color: var(--slate-dark, #101820);
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+}
+.mobile-menu a:hover,
+.mobile-menu a.active {
+  color: var(--green, #00c83a);
+  padding-left: 8px;
+}
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  display: block;
+}
+.mobile-menu-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.hero-bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.04);
+  transition: transform 8s ease;
+}
+.hero-section:hover .hero-bg-video { transform: scale(1); }
+@media (max-width: 1100px) {
+  nav#navbar .nav-links { gap: 22px; }
+  nav#navbar .nav-links a { font-size: 13px; }
+}
+@media (max-width: 980px) {
+  nav#navbar,
+  nav#navbar.scrolled {
+    padding: 14px 22px;
+  }
+  nav#navbar .nav-logo { height: 86px; }
+  nav#navbar.scrolled .nav-logo { height: 60px; }
+  nav#navbar .nav-links { display: none !important; }
+  nav#navbar .hamburger { display: flex !important; }
+}
+@media (min-width: 981px) {
+  nav#navbar .hamburger { display: none !important; }
+}
+/* === END HUGEFIN HOMEPAGE NAV SYNC === */
+/* === FOOTER SOCIAL BUTTON FIX === */
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+.footer-socials a,
+.footer-socials .social-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  color: rgba(255,255,255,0.72);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+.footer-socials a:hover,
+.footer-socials .social-btn:hover {
+  background: var(--green, #00c83a);
+  border-color: var(--green, #00c83a);
+  color: var(--white, #fff);
+  transform: translateY(-2px);
+}
+/* === END FOOTER SOCIAL BUTTON FIX === */
+/* === HUGEFIN MEDIA BACKGROUND PASS === */
+#process.process-section {
+  background-image:
+    linear-gradient(135deg, rgba(8,17,11,0.88), rgba(8,17,11,0.80)),
+    url('media/unsplash-1556761175-5973dc0f32e7-5266621d86c2.jpg');
+  background-size: cover;
+  background-position: center;
+}
+#testimonials.testimonials-section {
+  background-image:
+    linear-gradient(135deg, rgba(248,250,248,0.92), rgba(248,250,248,0.86)),
+    url('media/unsplash-1497366754035-f200968a6e72-9b3ffd4fe273.jpg');
+  background-size: cover;
+  background-position: center;
+}
+#faq.faq-section {
+  background-image:
+    linear-gradient(135deg, rgba(255,255,255,0.93), rgba(244,248,245,0.90)),
+    url('media/unsplash-1450101499163-c8848c66ca85-1432b204f89d.jpg');
+  background-size: cover;
+  background-position: center;
+}
+#contact.contact-section {
+  background-image:
+    linear-gradient(135deg, rgba(246,249,247,0.91), rgba(255,255,255,0.88)),
+    url('media/unsplash-1517245386807-bb43f82c33c4-e90b6a595b18.jpg');
+  background-size: cover;
+  background-position: center;
+}
+/* === END HUGEFIN MEDIA BACKGROUND PASS === */
+/* === HOMEPAGE TRANSLUCENT NAVBAR OVERRIDE === */
+nav#navbar,
+.site-header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1000 !important;
+  box-sizing: border-box !important;
+  padding: 4px max(50px, calc((100vw - 1500px) / 2)) !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  transition: all 0.4s ease !important;
+}
+
+nav#navbar.scrolled,
+nav.scrolled,
+.site-header.scrolled {
+  background: rgba(13, 26, 16, 0.82) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.08) !important;
+  border-bottom: 0 !important;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+}
+
+.site-header .navbar {
+  width: min(1500px, calc(100% - 100px));
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav#navbar .nav-logo,
+.site-header .nav-logo img,
+.site-header .nav-logo {
+  height: 120px !important;
+  width: auto !important;
+  transition: height 0.4s ease, filter 0.4s ease !important;
+}
+
+nav#navbar.scrolled .nav-logo,
+.site-header.scrolled .nav-logo img,
+.site-header.scrolled .nav-logo {
+  height: 70px !important;
+}
+
+nav#navbar .nav-links,
+.site-header .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+nav#navbar .nav-links a,
+.site-header .nav-links a,
+.site-header .nav-links > li > a {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff !important;
+  letter-spacing: 0.02em;
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav#navbar.scrolled .nav-links a,
+.site-header.scrolled .nav-links a,
+.site-header.scrolled .nav-links > li > a {
+  color: #fff !important;
+}
+
+nav#navbar .nav-links a::after,
+.site-header .nav-links a::after,
+.site-header .nav-links > li > a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--green, #00c83a);
+  transition: width 0.3s ease;
+}
+
+nav#navbar .nav-links a:hover::after,
+nav#navbar .nav-links a.active::after,
+.site-header .nav-links a:hover::after,
+.site-header .nav-links a.active::after,
+.site-header .nav-links > li > a:hover::after,
+.site-header .nav-links > li > a.active::after {
+  width: 100%;
+}
+
+nav#navbar .nav-links a:hover,
+nav#navbar .nav-links a.active,
+.site-header .nav-links a:hover,
+.site-header .nav-links a.active,
+.site-header .nav-links > li > a:hover,
+.site-header .nav-links > li > a.active {
+  color: var(--green, #00c83a) !important;
+}
+
+nav#navbar .nav-links .nav-cta,
+.site-header .btn-cta,
+.site-header .nav-cta {
+  background: var(--green, #00c83a) !important;
+  color: #fff !important;
+  padding: 10px 24px !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 16px rgba(0, 200, 58, 0.3) !important;
+}
+
+nav#navbar .nav-links .nav-cta:hover,
+.site-header .btn-cta:hover,
+.site-header .nav-cta:hover {
+  background: var(--green-dark, #008f2f) !important;
+  color: #fff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 200, 58, 0.4) !important;
+}
+
+nav#navbar .nav-links .nav-cta::after,
+.site-header .btn-cta::after,
+.site-header .nav-cta::after {
+  display: none !important;
+}
+
+nav#navbar .hamburger span,
+nav#navbar.scrolled .hamburger span,
+.site-header .hamburger span,
+.site-header.scrolled .hamburger span {
+  background: #fff !important;
+}
+
+@media (max-width: 768px) {
+  nav#navbar,
+  nav#navbar.scrolled,
+  .site-header,
+  .site-header.scrolled {
+    padding: 4px 22px !important;
+  }
+
+  nav#navbar .nav-logo,
+  .site-header .nav-logo img,
+  .site-header .nav-logo {
+    height: 86px !important;
+  }
+
+  nav#navbar.scrolled .nav-logo,
+  .site-header.scrolled .nav-logo img,
+  .site-header.scrolled .nav-logo {
+    height: 60px !important;
+  }
+}
+/* === END HOMEPAGE TRANSLUCENT NAVBAR OVERRIDE === */
+/* === HUGEFIN HERO VIDEO SYNC === */
+.hero-bg,
+.about-hero-bg,
+.service-hero,
+.hero-section .hero-bg,
+.tf-hero__bg {
+  background: var(--slate-dark, #0d1a10) !important;
+  overflow: hidden;
+}
+
+.about-hero-bg {
+  transform: none !important;
+}
+
+.about-hero-video,
+.hero-bg video,
+.hero-video,
+.hero-bg-video,
+.tf-hero__video {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  transform: none !important;
+  z-index: 0 !important;
+  opacity: 1 !important;
+}
+
+.hero > .hero-bg::after,
+.about-hero-bg::after {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  background:
+    linear-gradient(90deg, rgba(13,26,16,0.72) 0%, rgba(13,26,16,0.48) 45%, rgba(13,26,16,0.24) 100%),
+    linear-gradient(to top, rgba(13,26,16,0.68), rgba(13,26,16,0.08) 55%) !important;
+}
+
+.service-hero .hero-overlay,
+.hero-section .hero-overlay,
+.tf-hero__overlay {
+  background:
+    linear-gradient(90deg, rgba(13,26,16,0.72) 0%, rgba(13,26,16,0.48) 48%, rgba(13,26,16,0.26) 100%),
+    linear-gradient(to top, rgba(13,26,16,0.68), rgba(13,26,16,0.08) 58%) !important;
+  z-index: 1 !important;
+}
+
+.hero-grid-overlay,
+.hero-grid {
+  z-index: 1 !important;
+  opacity: 0.72 !important;
+}
+
+.about-hero-content,
+.hero .hero-content,
+.service-hero .hero-content,
+.hero-section .hero-content,
+.tf-hero__content,
+.hero-panel,
+.hero-glass-card,
+.hero-stats,
+.hero-scroll,
+.scroll-cue,
+.hero-scroll-cue,
+.hero-scroll-hint {
+  position: relative;
+  z-index: 2 !important;
+}
+
+.hero > .hero-bg img {
+  display: none !important;
+}
+
+#home.hero .hero-content {
+  width: min(1500px, calc(100% - 100px)) !important;
+  margin-inline: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-top: 100px !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.82fr) !important;
+  gap: 80px !important;
+  align-items: center !important;
+}
+
+#home.hero .hero-left {
+  max-width: 680px;
+}
+
+.hero .container.hero-content {
+  width: auto !important;
+  margin-left: max(50px, calc((100vw - 1500px) / 2)) !important;
+  margin-right: max(50px, calc((100vw - 1500px) / 2)) !important;
+}
+
+@media (max-width: 900px) {
+  #home.hero .hero-content {
+    width: calc(100% - 40px) !important;
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    padding-top: 110px !important;
+  }
+
+  .hero .container.hero-content {
+    width: auto !important;
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+  }
+}
+/* === END HUGEFIN HERO VIDEO SYNC === */
 </style>
 </head>
 <body>
@@ -734,7 +1342,7 @@ img { max-width: 100%; }
 
 <!-- NAVIGATION -->
 <nav id="navbar">
-  <a href="#home"><img src="HugeFin_logo.png" alt="HugeFin Finance & Consultants" class="nav-logo"></a>
+  <a href="#home"><img src="media/HugeFin_logo.png" alt="HugeFin Finance & Consultants" class="nav-logo"></a>
   <div class="nav-links">
     <a href="#services">Services</a>
     <a href="#industries">Industries</a>
@@ -757,14 +1365,14 @@ img { max-width: 100%; }
   <a href="#process" class="mobile-link">Our Process</a>
   <a href="#testimonials" class="mobile-link">Testimonials</a>
   <a href="#contact" class="mobile-link">Contact Us</a>
-  <a href="#contact" class="mobile-link" style="color:var(--green);font-weight:700;margin-top:16px;">→ Get Funded Now</a>
+  <a href="#contact" class="mobile-link" style="color:var(--green);font-weight:700;margin-top:16px;">-> Get Funded Now</a>
 </div>
 
 <!-- HERO -->
 <section id="home" class="hero" style="padding:0;">
   <div class="hero-bg">
   <video autoplay muted loop playsinline preload="auto">
-    <source src="main_vid.mp4" type="video/mp4">
+    <source src="media/hf-hero-homepage.mp4" type="video/mp4">
   </video>
 </div>
   <div class="hero-grid-overlay"></div>
@@ -835,9 +1443,9 @@ img { max-width: 100%; }
     </div>
     <div class="services-grid">
       <div class="service-card reveal">
-        <a href="hugefin-real-estate.html">
+        <a href="real-estate.html">
         <div class="service-card-img-wrap">
-          <img class="service-card-img" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80" alt="Real Estate Funding - High-rise development projects">
+          <img class="service-card-img" src="media/unsplash-1486325212027-8081e485255e-4a61358b2c87.jpg" alt="Real Estate Funding - High-rise development projects">
         </div>
           </a>
         <div class="service-card-arrow">
@@ -851,8 +1459,8 @@ img { max-width: 100%; }
             </svg>
           </div>
 
-          <h3 class="service-card-title"><a href="hugefin-real-estate.html"> Estate Funding</a></h3>
-          <p class="service-card-desc">Structured debt and equity for residential, commercial, and mixed-use developments. From construction finance to last-mile funding — we engineer solutions for every project stage.</p>
+          <h3 class="service-card-title"><a href="real-estate.html"> Estate Funding</a></h3>
+          <p class="service-card-desc">Structured debt and equity for residential, commercial, and mixed-use developments. From construction finance to last-mile funding - we engineer solutions for every project stage.</p>
           <div class="service-card-tags">
             <span class="tag">Construction Finance</span>
             <span class="tag">Mezzanine Debt</span>
@@ -861,10 +1469,13 @@ img { max-width: 100%; }
           </div>
         </div>
       </div>
+
       <div class="service-card reveal" style="transition-delay:0.1s;">
-        <div class="service-card-img-wrap">
-          <img class="service-card-img" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80" alt="Corporate Funding - Boardroom advisory sessions">
+        <a href="corporate-funding.html">
+        <div class="service-card-img-wrap" >
+          <img class="service-card-img" src="media/unsplash-1454165804606-c3d57bc86b40-d7290514fd52.jpg" alt="Corporate Funding - Boardroom advisory sessions">
         </div>
+      </a>
         <div class="service-card-arrow">
           <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
         </div>
@@ -874,7 +1485,7 @@ img { max-width: 100%; }
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
             </svg>
           </div>
-          <h3 class="service-card-title"><a href="corporate-funding-standalone.html">Corporate Funding</a></h3>
+          <h3 class="service-card-title"><a href="corporate-funding.html">Corporate Funding</a></h3>
           <p class="service-card-desc">Working capital, term loans, and structured credit for mid-to-large corporates. We bridge the gap between your business potential and the capital it deserves.</p>
           <div class="service-card-tags">
             <span class="tag">Working Capital</span>
@@ -885,9 +1496,11 @@ img { max-width: 100%; }
         </div>
       </div>
       <div class="service-card reveal" style="transition-delay:0.2s;">
+        <a href="private-funding.html">
         <div class="service-card-img-wrap">
-          <img class="service-card-img" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80" alt="Private Funding - Private equity investment discussions">
+          <img class="service-card-img" src="media/unsplash-1542744173-8e7e53415bb0-3e2a824c7bbb.jpg" alt="Private Funding - Private equity investment discussions">
         </div>
+        </a>
         <div class="service-card-arrow">
           <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
         </div>
@@ -897,7 +1510,7 @@ img { max-width: 100%; }
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
           </div>
-          <h3 class="service-card-title"><a href="private-funding-standalone.html">Private Funding</a></h3>
+          <h3 class="service-card-title"><a href="private-funding.html">Private Funding</a></h3>
           <p class="service-card-desc">Access to HNI capital, family office investments, and private credit for time-sensitive or non-standard funding requirements where traditional lenders fall short.</p>
           <div class="service-card-tags">
             <span class="tag">HNI Capital</span>
@@ -908,9 +1521,11 @@ img { max-width: 100%; }
         </div>
       </div>
       <div class="service-card reveal" style="transition-delay:0.3s;">
+        <a href="trade-finance.html">
         <div class="service-card-img-wrap">
-          <img class="service-card-img" src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&q=80" alt="Trade Finance - Global logistics and shipping">
+          <img class="service-card-img" src="media/unsplash-1578575437130-527eed3abbec-e49e575444fd.jpg" alt="Trade Finance - Global logistics and shipping">
         </div>
+        </a>
         <div class="service-card-arrow">
           <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
         </div>
@@ -920,7 +1535,7 @@ img { max-width: 100%; }
               <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
             </svg>
           </div>
-          <h3 class="service-card-title"><a href="trade-finance-standalone.html">Trade Finance</a></h3>
+          <h3 class="service-card-title"><a href="trade-finance.html">Trade Finance</a></h3>
           <p class="service-card-desc">Comprehensive import-export financing solutions including LC, BG, SBLC, and buyer's credit. Empowering Indian businesses in global commerce.</p>
           <div class="service-card-tags">
             <span class="tag">Letter of Credit</span>
@@ -940,11 +1555,11 @@ img { max-width: 100%; }
     <div class="industries-header reveal">
       <div class="section-tag">Who We Serve</div>
       <h2 class="section-title">Industries We <span>Power</span></h2>
-      <p class="section-sub">From high-rise towers to industrial warehouses — our capital solutions span the industries that build India's future.</p>
+      <p class="section-sub">From high-rise towers to industrial warehouses - our capital solutions span the industries that build India's future.</p>
     </div>
     <div class="industries-grid">
       <div class="industry-card reveal">
-        <img class="industry-card-img" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80" alt="Real Estate Developers">
+        <img class="industry-card-img" src="media/unsplash-1486325212027-8081e485255e-e8dc6215d86c.jpg" alt="Real Estate Developers">
         <div class="industry-card-overlay"></div>
         <div class="industry-card-content">
           <div class="industry-icon">
@@ -957,7 +1572,7 @@ img { max-width: 100%; }
         </div>
       </div>
       <div class="industry-card reveal" style="transition-delay:0.1s;">
-        <img class="industry-card-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Construction Companies">
+        <img class="industry-card-img" src="media/unsplash-1504307651254-35680f356dfd-41f36cbb04b3.jpg" alt="Construction Companies">
         <div class="industry-card-overlay"></div>
         <div class="industry-card-content">
           <div class="industry-icon">
@@ -970,7 +1585,7 @@ img { max-width: 100%; }
         </div>
       </div>
       <div class="industry-card reveal" style="transition-delay:0.2s;">
-        <img class="industry-card-img" src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=600&q=80" alt="Infrastructure Projects">
+        <img class="industry-card-img" src="media/unsplash-1513828583688-c52646db42da-3404e32d14a6.jpg" alt="Infrastructure Projects">
         <div class="industry-card-overlay"></div>
         <div class="industry-card-content">
           <div class="industry-icon">
@@ -983,7 +1598,7 @@ img { max-width: 100%; }
         </div>
       </div>
       <div class="industry-card reveal" style="transition-delay:0.3s;">
-        <img class="industry-card-img" src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=600&q=80" alt="Manufacturing Industrial Parks">
+        <img class="industry-card-img" src="media/unsplash-1565793298595-6a879b1d9492-f4b653354a36.jpg" alt="Manufacturing Industrial Parks">
         <div class="industry-card-overlay"></div>
         <div class="industry-card-content">
           <div class="industry-icon">
@@ -996,7 +1611,7 @@ img { max-width: 100%; }
         </div>
       </div>
       <div class="industry-card reveal" style="transition-delay:0.1s;">
-        <img class="industry-card-img" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80" alt="Logistics Warehouses">
+        <img class="industry-card-img" src="media/unsplash-1586528116311-ad8dd3c8310d-9d08a2ec6bad.jpg" alt="Logistics Warehouses">
         <div class="industry-card-overlay"></div>
         <div class="industry-card-content">
           <div class="industry-icon">
@@ -1009,7 +1624,7 @@ img { max-width: 100%; }
         </div>
       </div>
       <div class="industry-card reveal" style="transition-delay:0.2s;">
-        <img class="industry-card-img" src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=600&q=80" alt="Global Trade Finance">
+        <img class="industry-card-img" src="media/unsplash-1578575437130-527eed3abbec-6aab8c42d8af.jpg" alt="Global Trade Finance">
         <div class="industry-card-overlay"></div>
         <div class="industry-card-content">
           <div class="industry-icon">
@@ -1022,7 +1637,7 @@ img { max-width: 100%; }
         </div>
       </div>
       <div class="industry-card reveal" style="transition-delay:0.3s;">
-        <img class="industry-card-img" src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80" alt="Healthcare Hospitals">
+        <img class="industry-card-img" src="media/unsplash-1519494026892-80bbd2d6fd0d-c69a1c5e034d.jpg" alt="Healthcare Hospitals">
         <div class="industry-card-overlay"></div>
         <div class="industry-card-content">
           <div class="industry-icon">
@@ -1035,7 +1650,7 @@ img { max-width: 100%; }
         </div>
       </div>
       <div class="industry-card reveal" style="transition-delay:0.4s;">
-        <img class="industry-card-img" src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=600&q=80" alt="Hospitality Hotels">
+        <img class="industry-card-img" src="media/unsplash-1542314831-068cd1dbfeeb-527e62fdfe40.jpg" alt="Hospitality Hotels">
         <div class="industry-card-overlay"></div>
         <div class="industry-card-content">
           <div class="industry-icon">
@@ -1056,9 +1671,9 @@ img { max-width: 100%; }
   <div class="container">
     <div class="why-grid">
       <div class="why-image-block reveal-left">
-        <img class="why-main-img" src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&q=80" alt="Financial advisory meeting - HugeFin team">
+        <img class="why-main-img" src="media/unsplash-1560472354-b33ff0c44a43-a2c0826a6c0c.jpg" alt="Financial advisory meeting - HugeFin team">
         <div class="why-badge-float">
-          <span class="num">₹1200<br>Cr+</span>
+          <span class="num">Rs.1200<br>Cr+</span>
           <div class="lbl">Advisory Pipeline</div>
         </div>
       </div>
@@ -1083,7 +1698,7 @@ img { max-width: 100%; }
               </svg>
             </div>
             <div class="why-feature-title">Speed of Execution</div>
-            <div class="why-feature-desc">In-principle approvals in 7–14 days for eligible proposals.</div>
+            <div class="why-feature-desc">In-principle approvals in 7-14 days for eligible proposals.</div>
           </div>
           <div class="why-feature">
             <div class="why-feature-icon">
@@ -1092,7 +1707,7 @@ img { max-width: 100%; }
               </svg>
             </div>
             <div class="why-feature-title">End-to-End Support</div>
-            <div class="why-feature-desc">From documentation to disbursement — fully managed by our team.</div>
+            <div class="why-feature-desc">From documentation to disbursement - fully managed by our team.</div>
           </div>
           <div class="why-feature">
             <div class="why-feature-icon">
@@ -1157,8 +1772,8 @@ img { max-width: 100%; }
     </div>
     <div class="testimonials-grid">
       <div class="testimonial-card reveal">
-        <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        <p class="testimonial-text">HugeFin structured a ₹85 crore construction finance deal for our residential project in just 3 weeks. Their network and expertise is unmatched in the market.</p>
+        <div class="stars"><span class="star">*</span><span class="star">*</span><span class="star">*</span><span class="star">*</span><span class="star">*</span></div>
+        <p class="testimonial-text">HugeFin structured a Rs.85 crore construction finance deal for our residential project in just 3 weeks. Their network and expertise is unmatched in the market.</p>
         <div class="testimonial-author">
           <div class="author-avatar">RK</div>
           <div>
@@ -1169,8 +1784,8 @@ img { max-width: 100%; }
         </div>
       </div>
       <div class="testimonial-card reveal" style="transition-delay:0.1s;">
-        <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        <p class="testimonial-text">Our EPC company needed urgent working capital. HugeFin arranged ₹40 crore in 18 days. They truly understand the challenges of infrastructure businesses.</p>
+        <div class="stars"><span class="star">*</span><span class="star">*</span><span class="star">*</span><span class="star">*</span><span class="star">*</span></div>
+        <p class="testimonial-text">Our EPC company needed urgent working capital. HugeFin arranged Rs.40 crore in 18 days. They truly understand the challenges of infrastructure businesses.</p>
         <div class="testimonial-author">
           <div class="author-avatar">PS</div>
           <div>
@@ -1181,7 +1796,7 @@ img { max-width: 100%; }
         </div>
       </div>
       <div class="testimonial-card reveal" style="transition-delay:0.2s;">
-        <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <div class="stars"><span class="star">*</span><span class="star">*</span><span class="star">*</span><span class="star">*</span><span class="star">*</span></div>
         <p class="testimonial-text">Trade finance solutions from HugeFin transformed our export operations. LC facilities worth $5M were arranged seamlessly. Highly professional team.</p>
         <div class="testimonial-author">
           <div class="author-avatar">AM</div>
@@ -1209,14 +1824,14 @@ img { max-width: 100%; }
               What is the minimum funding size HugeFin advises on?
               <svg class="faq-chevron" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
             </div>
-            <div class="faq-answer">We typically work with funding requirements starting from ₹5 crore upwards. Our sweet spot is ₹20 crore to ₹500 crore across real estate, corporate, and trade finance mandates.</div>
+            <div class="faq-answer">We typically work with funding requirements starting from Rs.5 crore upwards. Our sweet spot is Rs.20 crore to Rs.500 crore across real estate, corporate, and trade finance mandates.</div>
           </div>
           <div class="faq-item">
             <div class="faq-question">
               How long does it take to arrange funding?
               <svg class="faq-chevron" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
             </div>
-            <div class="faq-answer">Timelines vary by complexity. For most deals, we get in-principle approvals within 7–21 days and final disbursement within 45–90 days, subject to due diligence and documentation completion.</div>
+            <div class="faq-answer">Timelines vary by complexity. For most deals, we get in-principle approvals within 7-21 days and final disbursement within 45-90 days, subject to due diligence and documentation completion.</div>
           </div>
           <div class="faq-item">
             <div class="faq-question">
@@ -1230,7 +1845,7 @@ img { max-width: 100%; }
               What documents are required to begin the process?
               <svg class="faq-chevron" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
             </div>
-            <div class="faq-answer">We begin with a simple information memorandum — basic project details, promoter profile, and existing liability statements. Our team guides you through all documentation requirements throughout the process.</div>
+            <div class="faq-answer">We begin with a simple information memorandum - basic project details, promoter profile, and existing liability statements. Our team guides you through all documentation requirements throughout the process.</div>
           </div>
           <div class="faq-item">
             <div class="faq-question">
@@ -1242,9 +1857,9 @@ img { max-width: 100%; }
         </div>
       </div>
       <div class="faq-visual reveal-right">
-        <img class="faq-visual-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&q=80" alt="Financial planning consultation">
+        <img class="faq-visual-img" src="media/unsplash-1507003211169-0a1dd7228f2d-856a5b02d291.jpg" alt="Financial planning consultation">
         <div class="faq-visual-card">
-          <div class="vc-num">7–21</div>
+          <div class="vc-num">7-21</div>
           <div class="vc-lbl">Days to In-Principle Approval</div>
         </div>
       </div>
@@ -1282,7 +1897,7 @@ img { max-width: 100%; }
     <div class="contact-grid">
       <div class="contact-info reveal-left">
         <div style="margin-bottom:16px;">
-          <img src="LOGO_PLACEHOLDER" alt="HugeFin" style="height:60px;margin-bottom:24px;display:block;">
+          <img src="media/HugeFin_logo.png" alt="HugeFin" style="height:60px;margin-bottom:24px;display:block;">
           <p style="font-size:15px;color:var(--slate-mid);line-height:1.7;">India's trusted capital advisory firm specializing in institutional-grade funding solutions for real estate, corporate, and trade finance sectors.</p>
         </div>
         <div class="contact-item">
@@ -1327,46 +1942,49 @@ img { max-width: 100%; }
           </div>
           <div>
             <div class="contact-item-title">Working Hours</div>
-            <div class="contact-item-val">Mon–Sat: 9:00 AM – 7:00 PM</div>
+            <div class="contact-item-val">Mon-Sat: 9:00 AM - 7:00 PM</div>
           </div>
         </div>
       </div>
       <div class="contact-form-wrap reveal-right">
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:700;color:var(--slate-dark);margin-bottom:32px;">Send Us Your Requirement</h3>
-        <div class="form-grid">
-          <div class="form-group">
-            <label for="fname">Full Name *</label>
-            <input type="text" id="fname" placeholder="Your full name">
+        <form id="contactForm" onsubmit="handleSubmit(event)" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="fname">Full Name *</label>
+              <input type="text" id="fname" name="fullName" placeholder="Your full name" autocomplete="name" required>
+            </div>
+            <div class="form-group">
+              <label for="fphone">Phone Number *</label>
+              <input type="tel" id="fphone" name="phoneNumber" placeholder="+91 XXXXX XXXXX" autocomplete="tel" required>
+            </div>
+            <div class="form-group">
+              <label for="femail">Email Address</label>
+              <input type="email" id="femail" name="emailAddress" placeholder="you@company.com" autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="fcompany">Company Name</label>
+              <input type="text" id="fcompany" name="companyName" placeholder="Your company" autocomplete="organization">
+            </div>
+            <div class="form-group full">
+              <label for="fservice">Funding Requirement</label>
+              <select id="fservice" name="fundingRequirement">
+                <option value="">Select type of funding</option>
+                <option>Real Estate Funding</option>
+                <option>Corporate Funding</option>
+                <option>Private Funding</option>
+                <option>Trade Finance</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label for="fmsg">Describe Your Requirement</label>
+              <textarea id="fmsg" name="requirementDetails" placeholder="Please describe your project, funding amount, and timeline..."></textarea>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="fphone">Phone Number *</label>
-            <input type="tel" id="fphone" placeholder="+91 XXXXX XXXXX">
-          </div>
-          <div class="form-group">
-            <label for="femail">Email Address</label>
-            <input type="email" id="femail" placeholder="you@company.com">
-          </div>
-          <div class="form-group">
-            <label for="fcompany">Company Name</label>
-            <input type="text" id="fcompany" placeholder="Your company">
-          </div>
-          <div class="form-group full">
-            <label for="fservice">Funding Requirement</label>
-            <select id="fservice">
-              <option value="">Select type of funding</option>
-              <option>Real Estate Funding</option>
-              <option>Corporate Funding</option>
-              <option>Private Funding</option>
-              <option>Trade Finance</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="form-group full">
-            <label for="fmsg">Describe Your Requirement</label>
-            <textarea id="fmsg" placeholder="Please describe your project, funding amount, and timeline..."></textarea>
-          </div>
-        </div>
-        <button class="form-submit" onclick="handleSubmit()">Submit Enquiry →</button>
+          <button class="form-submit" type="submit">Submit Enquiry</button>
+          <p class="form-status" id="formStatus" aria-live="polite"></p>
+        </form>
       </div>
     </div>
   </div>
@@ -1376,22 +1994,21 @@ img { max-width: 100%; }
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <img src="LOGO_PLACEHOLDER" alt="HugeFin" class="footer-logo">
+      <img src="media/HugeFin_logo.png" alt="HugeFin" class="footer-logo">
       <p class="footer-tagline">India's institutional-grade capital advisory firm for real estate, corporate, and trade finance mandates.</p>
       <div class="footer-socials">
-        <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
-        <a href="#" class="social-btn" aria-label="Twitter">𝕏</a>
-        <a href="#" class="social-btn" aria-label="WhatsApp">W</a>
-        <a href="#" class="social-btn" aria-label="Email">@</a>
-      </div>
+          <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-btn" aria-label="Instagram">IG</a>
+          <a href="#" class="social-btn" aria-label="X (Twitter)">X</a>
+        </div>
     </div>
     <div>
       <div class="footer-col-title">Services</div>
       <div class="footer-links">
-        <a href="#services">Real Estate Funding</a>
-        <a href="#services">Corporate Funding</a>
-        <a href="#services">Private Funding</a>
-        <a href="#services">Trade Finance</a>
+        <a href="real-estate.html">Real Estate Funding</a>
+        <a href="corporate-funding.html">Corporate Funding</a>
+        <a href="private-funding.html">Private Funding</a>
+        <a href="trade-finance.html">Trade Finance</a>
         <a href="#services">Project Finance</a>
       </div>
     </div>
@@ -1408,7 +2025,7 @@ img { max-width: 100%; }
     <div>
       <div class="footer-col-title">Company</div>
       <div class="footer-links">
-        <a href="#why">About HugeFin</a>
+        <a href="about-us.html">About HugeFin</a>
         <a href="#process">Our Process</a>
         <a href="#testimonials">Client Stories</a>
         <a href="#contact">Contact Us</a>
@@ -1417,7 +2034,7 @@ img { max-width: 100%; }
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2024 HugeFin Finance & Consultants. All rights reserved.</div>
+    <div class="footer-copy">(c) 2024 HugeFin Finance & Consultants. All rights reserved.</div>
     <div class="footer-legal">
       <a href="#">Privacy Policy</a>
       <a href="#">Terms of Service</a>
@@ -1433,7 +2050,8 @@ document.querySelectorAll('img[src="LOGO_PLACEHOLDER"]').forEach(img => { img.sr
 
 // ============ LOADER ============
 window.addEventListener('load', () => {
-  setTimeout(() => { document.getElementById('loader').classList.add('hidden'); }, 2200);
+  const loader = document.getElementById('loader');
+  if (loader) setTimeout(() => { loader.classList.add('hidden'); }, 2200);
 });
 
 // ============ SCROLL PROGRESS ============
@@ -1522,15 +2140,148 @@ document.querySelectorAll('.faq-question').forEach(q => {
 });
 
 // ============ FORM ============
-function handleSubmit() {
-  const name = document.getElementById('fname').value;
-  const phone = document.getElementById('fphone').value;
-  if (!name || !phone) { alert('Please fill in your name and phone number.'); return; }
+// Paste your deployed Google Apps Script Web App URL here.
+const GOOGLE_SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwhabeG_M374TeaAtwLaj9megFwWV8B8a9UXq0BD3YjNlFRrXN5Xmisvy1TVUrRjaVvjQ/exec';
+
+function getFieldValue(id) {
+  const field = document.getElementById(id);
+  return field ? field.value.trim() : '';
+}
+
+function setFormStatus(message, type) {
+  const status = document.getElementById('formStatus');
+  if (!status) return;
+  status.textContent = message;
+  status.className = type ? `form-status ${type}` : 'form-status';
+}
+
+function isGoogleSheetsConfigured() {
+  return GOOGLE_SHEETS_WEB_APP_URL &&
+    GOOGLE_SHEETS_WEB_APP_URL.startsWith('https://script.google.com/') &&
+    !GOOGLE_SHEETS_WEB_APP_URL.includes('PASTE_YOUR');
+}
+
+async function handleSubmit(event) {
+  if (event) event.preventDefault();
+
+  if (!isGoogleSheetsConfigured()) {
+    setFormStatus('Google Sheets is not connected yet. Paste your Apps Script Web App URL into GOOGLE_SHEETS_WEB_APP_URL.', 'error');
+    return;
+  }
+
+  const name = getFieldValue('fname');
+  const phone = getFieldValue('fphone');
+  const email = getFieldValue('femail');
+
+  if (!name || !phone) {
+    setFormStatus('Please fill in your name and phone number.', 'error');
+    (!name ? document.getElementById('fname') : document.getElementById('fphone')).focus();
+    return;
+  }
+
+  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    setFormStatus('Please enter a valid email address or leave it blank.', 'error');
+    document.getElementById('femail').focus();
+    return;
+  }
+
+  const submission = {
+    submittedAt: new Date().toLocaleString('en-IN'),
+    name,
+    phone,
+    email,
+    company: getFieldValue('fcompany'),
+    fundingRequirement: getFieldValue('fservice'),
+    message: getFieldValue('fmsg'),
+    source: window.location.href
+  };
+
+  const form = document.getElementById('contactForm');
   const btn = document.querySelector('.form-submit');
-  btn.textContent = "✓ Enquiry Submitted — We'll call you within 24 hours";
+  const originalText = btn.textContent;
+  btn.textContent = 'Submitting...';
   btn.style.background = 'var(--slate-dark)';
   btn.disabled = true;
+  setFormStatus('Sending your enquiry to the Google Sheet...', '');
+
+  try {
+    await fetch(GOOGLE_SHEETS_WEB_APP_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: new URLSearchParams(submission)
+    });
+
+    form.reset();
+    btn.textContent = 'Enquiry Submitted';
+    setFormStatus('Your enquiry has been added to the Google Sheet.', 'success');
+  } catch (error) {
+    console.error('Google Sheets submission failed:', error);
+    btn.textContent = originalText;
+    btn.style.background = 'var(--green)';
+    btn.disabled = false;
+    setFormStatus('Could not submit right now. Please check the Google Apps Script URL and try again.', 'error');
+    return;
+  }
+
+  setTimeout(() => {
+    btn.textContent = originalText;
+    btn.style.background = 'var(--green)';
+    btn.disabled = false;
+  }, 2600);
 }
 </script>
+<!-- HUGEFIN_NAV_SYNC_SCRIPT -->
+<script>
+(function () {
+  function initHugeFinNav() {
+    const navbar = document.getElementById('navbar');
+    const oldHamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+
+    if (navbar) {
+      const syncScrolled = () => navbar.classList.toggle('scrolled', window.scrollY > 60);
+      window.addEventListener('scroll', syncScrolled, { passive: true });
+      syncScrolled();
+    }
+
+    if (!oldHamburger || !mobileMenu || !mobileOverlay) return;
+
+    const hamburger = oldHamburger.cloneNode(true);
+    oldHamburger.parentNode.replaceChild(hamburger, oldHamburger);
+
+    const closeMenu = () => {
+      hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileMenu.classList.remove('open');
+      mobileOverlay.classList.remove('active');
+      mobileOverlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    };
+
+    const openMenu = () => {
+      hamburger.classList.add('active');
+      hamburger.setAttribute('aria-expanded', 'true');
+      mobileMenu.classList.add('open');
+      mobileOverlay.classList.add('active');
+      mobileOverlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    };
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
+    });
+    mobileOverlay.addEventListener('click', closeMenu);
+    mobileMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHugeFinNav);
+  } else {
+    initHugeFinNav();
+  }
+})();
+</script>
+<!-- END_HUGEFIN_NAV_SYNC_SCRIPT -->
 </body>
 </html>

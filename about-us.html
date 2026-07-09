@@ -1,0 +1,2151 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="About HugeFin Finance & Consultants - disciplined capital advisory for real estate funding, corporate finance, trade finance and private funding mandates.">
+<meta name="keywords" content="About HugeFin, Finance Consultants, Capital Advisory, Real Estate Funding, Corporate Finance, Trade Finance, Private Funding">
+<meta property="og:title" content="About HugeFin Finance & Consultants">
+<meta property="og:description" content="Built for borrowers who need clear advisory, lender-ready documentation and structured access to capital.">
+<meta property="og:type" content="website">
+<title>About HugeFin Finance & Consultants | Capital Advisory Built With Discipline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green: #00C83A;
+  --green-dark: #00A030;
+  --green-light: #00E044;
+  --slate: #455A64;
+  --slate-dark: #0D1A10;
+  --slate-mid: #607D8B;
+  --white: #FFFFFF;
+  --off-white: #F5F7F8;
+  --light-grey: #ECEFF1;
+  --border: rgba(69,90,100,0.12);
+  --shadow-sm: 0 2px 12px rgba(0,0,0,0.06);
+  --shadow-md: 0 8px 40px rgba(0,0,0,0.10);
+  --shadow-lg: 0 20px 80px rgba(0,0,0,0.14);
+  --shadow-green: 0 8px 40px rgba(0,200,58,0.22);
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --radius-lg: 24px;
+  --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --container-width: 1280px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font-body);
+  color: var(--slate-dark);
+  background: var(--white);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+button, input, select, textarea { font: inherit; }
+
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--green), var(--green-light));
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  width: 46px;
+  height: 46px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--white);
+  font-size: 22px;
+  line-height: 1;
+  box-shadow: var(--shadow-green);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(14px);
+  transition: all 0.3s ease;
+  z-index: 950;
+}
+.back-to-top.visible { opacity: 1; pointer-events: all; transform: translateY(0); }
+.back-to-top:hover { background: var(--green-dark); transform: translateY(-2px); }
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 4px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.4s ease;
+}
+nav.scrolled {
+  background: rgba(13, 26, 16, 0.94);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 2px 30px rgba(0,0,0,0.14);
+}
+.nav-logo { height: 116px; transition: height 0.4s ease; cursor: pointer; }
+nav.scrolled .nav-logo { height: 70px; }
+.nav-links { display: flex; align-items: center; gap: 32px; }
+.nav-links a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: 0.02em;
+  position: relative;
+  transition: color 0.3s ease;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--green);
+  transition: width 0.3s ease;
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--green); }
+.nav-links a:hover::after,
+.nav-links a.active::after { width: 100%; }
+.nav-cta {
+  background: var(--green);
+  color: var(--white) !important;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(0,200,58,0.3);
+}
+.nav-cta:hover { background: var(--green-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,200,58,0.4); }
+.nav-cta::after { display: none; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 6px;
+  border: 0;
+  background: transparent;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: min(320px, 86vw);
+  height: 100vh;
+  background: var(--white);
+  z-index: 999;
+  padding: 100px 40px 40px;
+  box-shadow: -10px 0 60px rgba(0,0,0,0.15);
+  transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: flex;
+  flex-direction: column;
+}
+.mobile-menu.open { right: 0; }
+.mobile-menu a {
+  display: block;
+  padding: 16px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--slate-dark);
+  border-bottom: 1px solid var(--border);
+  transition: color 0.3s ease, padding-left 0.3s ease;
+}
+.mobile-menu a:hover { color: var(--green); padding-left: 8px; }
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+.mobile-menu-overlay.active { opacity: 1; pointer-events: all; }
+
+.container {
+  width: min(var(--container-width), calc(100% - 80px));
+  margin-inline: auto;
+}
+.container-wide {
+  width: min(1500px, calc(100% - 100px));
+  margin-inline: auto;
+}
+section { padding: 100px 0; }
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 16px;
+}
+.section-tag::before {
+  content: '';
+  width: 20px;
+  height: 2px;
+  background: var(--green);
+  border-radius: 2px;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 54px);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--slate-dark);
+  margin-bottom: 20px;
+}
+.section-title span { color: var(--green); }
+.section-sub {
+  font-size: 17px;
+  color: var(--slate-mid);
+  line-height: 1.7;
+  max-width: 640px;
+}
+
+.about-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--slate-dark);
+}
+.about-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('media/buildings.jpg');
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.02);
+}
+.about-hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(13,26,16,0.76) 0%, rgba(13,26,16,0.54) 45%, rgba(13,26,16,0.28) 100%),
+    linear-gradient(to top, rgba(13,26,16,0.70), rgba(13,26,16,0.08) 55%);
+}
+.hero-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,200,58,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,200,58,0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.8;
+}
+.about-hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(1500px, calc(100% - 100px));
+  margin-inline: auto;
+  padding-top: 82px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(360px, 0.72fr);
+  gap: 80px;
+  align-items: center;
+}
+.about-hero-content > * {
+  min-width: 0;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0,200,58,0.12);
+  border: 1px solid rgba(0,200,58,0.3);
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 999px;
+  margin-bottom: 24px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.2s forwards;
+}
+.hero-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(0,200,58,0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(0,200,58,0); }
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 5.4vw, 86px);
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--white);
+  max-width: 920px;
+  margin-bottom: 24px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.38s forwards;
+}
+.hero-title span { color: var(--green); }
+.hero-sub {
+  font-size: 18px;
+  color: rgba(255,255,255,0.73);
+  line-height: 1.75;
+  max-width: 650px;
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.56s forwards;
+}
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.74s forwards;
+}
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+.btn-primary {
+  background: var(--green);
+  color: var(--white);
+  border: 2px solid var(--green);
+  box-shadow: 0 8px 32px rgba(0,200,58,0.35);
+}
+.btn-primary:hover {
+  background: var(--green-dark);
+  border-color: var(--green-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0,200,58,0.45);
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid rgba(255,255,255,0.3);
+}
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.6);
+  transform: translateY(-2px);
+}
+.hero-panel {
+  opacity: 0;
+  animation: fadeRight 0.8s ease 0.82s forwards;
+}
+.hero-card-stack {
+  position: relative;
+  display: grid;
+  gap: 16px;
+}
+.hero-card {
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(22px);
+  border: 1px solid rgba(255,255,255,0.13);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  transition: all 0.4s ease;
+}
+.hero-card:hover { background: rgba(255,255,255,0.11); transform: translateX(8px); }
+.hero-card-kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.hero-card-title {
+  font-size: 16px;
+  color: var(--white);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.hero-card-val {
+  font-family: var(--font-display);
+  font-size: 34px;
+  line-height: 1;
+  font-weight: 800;
+  color: var(--green);
+}
+.hero-card-label {
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  margin-top: 8px;
+}
+.hero-card-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.hero-card-mini {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-sm);
+  padding: 20px;
+}
+.hero-card-mini .hero-card-val { font-size: 26px; }
+
+.trust-strip {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 24px 0;
+}
+.trust-inner {
+  width: min(1280px, calc(100% - 80px));
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+.trust-label {
+  font-size: 12px;
+  color: var(--slate-mid);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-weight: 500;
+}
+.trust-logos {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.trust-logo-item {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--slate-mid);
+  opacity: 0.65;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.story-section { background: var(--off-white); }
+.story-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 78px;
+  align-items: center;
+}
+.image-collage {
+  position: relative;
+  min-height: 590px;
+}
+.collage-main {
+  position: absolute;
+  inset: 0 80px 70px 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.collage-main img,
+.collage-small img { width: 100%; height: 100%; object-fit: cover; }
+.collage-small {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 48%;
+  height: 280px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 8px solid var(--off-white);
+  box-shadow: var(--shadow-lg);
+}
+.collage-badge {
+  position: absolute;
+  left: 34px;
+  bottom: 108px;
+  background: var(--green);
+  color: var(--white);
+  padding: 24px 28px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-green);
+}
+.collage-badge strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 36px;
+  line-height: 1;
+}
+.collage-badge span {
+  display: block;
+  font-size: 12px;
+  opacity: 0.86;
+  margin-top: 6px;
+}
+.story-copy p {
+  color: var(--slate-mid);
+  font-size: 16px;
+  line-height: 1.82;
+  margin-bottom: 20px;
+}
+.story-points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 36px;
+}
+.story-point {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  transition: all 0.3s ease;
+}
+.story-point:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0,200,58,0.35);
+  box-shadow: 0 6px 24px rgba(0,200,58,0.08);
+}
+.point-num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--green);
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+}
+.point-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--slate-dark);
+  margin-bottom: 6px;
+}
+.point-desc {
+  font-size: 13px;
+  color: var(--slate-mid);
+  line-height: 1.6;
+}
+
+.stats-section {
+  background: var(--slate-dark);
+  padding: 80px 0;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.08);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.stat-card {
+  background: var(--slate-dark);
+  padding: 46px 34px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.4s ease;
+}
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 2px;
+  background: var(--green);
+  transition: width 0.4s ease;
+}
+.stat-card:hover { background: rgba(0,200,58,0.08); }
+.stat-card:hover::before { width: 80%; }
+.stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(42px, 5vw, 58px);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.stat-num span { color: var(--green); }
+.stat-label {
+  font-size: 13px;
+  color: rgba(255,255,255,0.58);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+.stat-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,0.36);
+  margin-top: 7px;
+}
+
+.values-section { background: var(--white); }
+.values-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 60px;
+  margin-bottom: 56px;
+}
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.value-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px 26px;
+  background: var(--white);
+  min-height: 280px;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+.value-card::after {
+  content: '';
+  position: absolute;
+  inset: auto 26px 0 26px;
+  height: 2px;
+  background: var(--green);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+.value-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--green);
+  box-shadow: var(--shadow-md);
+}
+.value-card:hover::after { transform: scaleX(1); }
+.value-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,200,58,0.1);
+  border: 1px solid rgba(0,200,58,0.2);
+  color: var(--green);
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+.value-title {
+  font-size: 20px;
+  font-family: var(--font-display);
+  color: var(--slate-dark);
+  line-height: 1.25;
+  margin-bottom: 14px;
+}
+.value-desc {
+  font-size: 14px;
+  color: var(--slate-mid);
+  line-height: 1.75;
+}
+
+.services-section { background: var(--off-white); }
+.services-header {
+  text-align: center;
+  margin-bottom: 58px;
+}
+.services-header .section-sub { margin-inline: auto; }
+.about-services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.about-service-card {
+  position: relative;
+  min-height: 410px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.4s ease;
+  background: var(--slate-dark);
+}
+.about-service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+.about-service-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 410px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.about-service-card:hover img { transform: scale(1.08); }
+.about-service-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(13,26,16,0.94) 0%, rgba(13,26,16,0.42) 60%, rgba(13,26,16,0.08) 100%);
+  transition: background 0.4s ease;
+}
+.about-service-card:hover::after {
+  background: linear-gradient(to top, rgba(0,160,48,0.92) 0%, rgba(13,26,16,0.54) 62%, rgba(13,26,16,0.08) 100%);
+}
+.service-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 28px;
+}
+.service-index {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--green);
+  letter-spacing: 0.15em;
+  margin-bottom: 12px;
+}
+.about-service-card:hover .service-index { color: var(--white); }
+.service-title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: var(--white);
+  line-height: 1.16;
+  margin-bottom: 12px;
+}
+.service-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.65;
+}
+
+.process-section { background: var(--slate-dark); }
+.process-header {
+  display: grid;
+  grid-template-columns: 0.75fr 1fr;
+  gap: 80px;
+  align-items: end;
+  margin-bottom: 64px;
+}
+.process-header .section-title { color: var(--white); }
+.process-header .section-sub { color: rgba(255,255,255,0.55); }
+.process-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.process-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  padding: 30px 26px;
+  min-height: 260px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+.process-card:hover {
+  background: rgba(0,200,58,0.09);
+  border-color: rgba(0,200,58,0.35);
+  transform: translateY(-6px);
+}
+.process-card::before {
+  content: attr(data-step);
+  position: absolute;
+  right: 22px;
+  top: 18px;
+  font-family: var(--font-display);
+  font-size: 76px;
+  line-height: 1;
+  color: rgba(255,255,255,0.05);
+  font-weight: 800;
+}
+.process-kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--green);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 36px;
+}
+.process-title {
+  color: var(--white);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.process-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.72;
+}
+
+.leadership-section { background: var(--white); }
+.leadership-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.95fr;
+  gap: 78px;
+  align-items: center;
+}
+.leadership-media {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  min-height: 560px;
+}
+.leadership-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+  object-fit: cover;
+}
+.leadership-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(13,26,16,0.55), transparent 62%);
+}
+.leadership-note {
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  bottom: 28px;
+  z-index: 2;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(255,255,255,0.55);
+  backdrop-filter: blur(18px);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+}
+.leadership-note strong {
+  display: block;
+  color: var(--slate-dark);
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.leadership-note span {
+  color: var(--slate-mid);
+  font-size: 13px;
+  line-height: 1.55;
+}
+.principles-list {
+  display: grid;
+  gap: 16px;
+  margin-top: 36px;
+}
+.principle {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+}
+.principle-mark {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: rgba(0,200,58,0.1);
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+}
+.principle h3 {
+  font-size: 17px;
+  color: var(--slate-dark);
+  margin-bottom: 4px;
+}
+.principle p {
+  font-size: 14px;
+  color: var(--slate-mid);
+  line-height: 1.65;
+}
+
+.cta-section {
+  position: relative;
+  overflow: hidden;
+  background: var(--slate-dark);
+  padding: 90px 0;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0,200,58,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,200,58,0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+.cta-panel {
+  position: relative;
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(135deg, rgba(0,200,58,0.18), rgba(255,255,255,0.06)),
+    rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 54px 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 44px;
+}
+.cta-title {
+  font-family: var(--font-display);
+  color: var(--white);
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.12;
+  max-width: 720px;
+}
+.cta-title span { color: var(--green); }
+.cta-copy {
+  color: rgba(255,255,255,0.58);
+  margin-top: 16px;
+  max-width: 650px;
+  font-size: 16px;
+  line-height: 1.72;
+}
+.cta-actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: flex-end; }
+
+footer {
+  background: #08110B;
+  color: var(--white);
+  padding: 70px 0 26px;
+}
+.footer-top {
+  width: min(1280px, calc(100% - 80px));
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1.25fr repeat(3, 1fr);
+  gap: 54px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.footer-logo {
+  width: 170px;
+  margin-bottom: 22px;
+}
+.footer-tagline {
+  color: rgba(255,255,255,0.52);
+  max-width: 340px;
+  font-size: 14px;
+  line-height: 1.75;
+}
+.footer-socials { display: flex; gap: 10px; margin-top: 24px; }
+.social-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.13);
+  color: rgba(255,255,255,0.68);
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+.social-btn:hover {
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--white);
+}
+.footer-col-title {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--green);
+  margin-bottom: 18px;
+}
+.footer-links { display: grid; gap: 12px; }
+.footer-links a {
+  color: rgba(255,255,255,0.52);
+  font-size: 14px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.footer-links a:hover {
+  color: var(--green);
+  transform: translateX(4px);
+}
+.footer-bottom {
+  width: min(1280px, calc(100% - 80px));
+  margin: 24px auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  color: rgba(255,255,255,0.4);
+  font-size: 13px;
+}
+.footer-legal { display: flex; gap: 24px; }
+.footer-legal a:hover { color: var(--green); }
+
+.reveal,
+.reveal-left,
+.reveal-right {
+  opacity: 0;
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.reveal { transform: translateY(34px); }
+.reveal-left { transform: translateX(-40px); }
+.reveal-right { transform: translateX(40px); }
+.reveal.visible,
+.reveal-left.visible,
+.reveal-right.visible {
+  opacity: 1;
+  transform: translate(0,0);
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeRight {
+  from { opacity: 0; transform: translateX(36px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 1180px) {
+  .nav-links { gap: 22px; }
+  .about-hero-content,
+  .story-grid,
+  .leadership-grid,
+  .process-header { grid-template-columns: 1fr; gap: 54px; }
+  .hero-panel { max-width: 620px; }
+  .values-grid,
+  .about-services-grid,
+  .process-timeline { grid-template-columns: repeat(2, 1fr); }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 900px) {
+  nav { padding: 8px 24px; }
+  .nav-logo,
+  nav.scrolled .nav-logo { height: 72px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .container,
+  .container-wide,
+  .about-hero-content,
+  .trust-inner,
+  .footer-top,
+  .footer-bottom { width: min(100% - 40px, var(--container-width)); }
+  section { padding: 72px 0; }
+  .about-hero { min-height: 92vh; }
+  .about-hero-content { padding-top: 92px; }
+  .hero-title { font-size: clamp(40px, 11vw, 64px); }
+  .hero-sub { font-size: 16px; }
+  .trust-inner,
+  .values-header,
+  .cta-panel,
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .trust-logos { justify-content: flex-start; gap: 18px; }
+  .image-collage { min-height: 470px; }
+  .collage-main { inset: 0 28px 90px 0; }
+  .collage-small { width: 56%; height: 210px; }
+  .collage-badge { left: 20px; bottom: 74px; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .cta-panel { padding: 38px 28px; }
+  .cta-actions { justify-content: flex-start; }
+}
+
+@media (max-width: 620px) {
+  .btn-primary,
+  .btn-secondary { width: 100%; justify-content: center; padding: 14px 22px; }
+  .hero-card-row,
+  .story-points,
+  .values-grid,
+  .about-services-grid,
+  .process-timeline,
+  .stats-grid,
+  .footer-top { grid-template-columns: 1fr; }
+  .hero-card,
+  .hero-card-mini { padding: 22px; }
+  .about-hero-content { width: min(calc(100% - 32px), 358px); }
+  .hero-title {
+    font-size: clamp(34px, 9.5vw, 40px);
+    line-height: 1.08;
+  }
+  .container,
+  .container-wide,
+  .trust-inner,
+  .footer-top,
+  .footer-bottom { width: calc(100% - 32px); }
+  .section-title { font-size: 32px; }
+  .image-collage { min-height: 420px; }
+  .collage-main { inset: 0 0 118px 0; }
+  .collage-small { width: 72%; height: 180px; border-width: 6px; }
+  .collage-badge { padding: 18px 20px; left: 16px; bottom: 82px; }
+  .collage-badge strong { font-size: 30px; }
+  .stat-card { padding: 38px 24px; }
+  .leadership-media,
+  .leadership-media img { min-height: 430px; }
+  .footer-legal { flex-wrap: wrap; gap: 14px; }
+}
+/* === HUGEFIN HOMEPAGE NAV SYNC === */
+nav#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 18px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  max-width: none;
+  margin: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  transition: all 0.4s ease;
+}
+nav#navbar.scrolled {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.08);
+  padding: 14px 40px;
+}
+nav#navbar > a:first-child {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+nav#navbar .nav-logo {
+  height: 120px;
+  width: auto;
+  display: block;
+  cursor: pointer;
+  filter: none;
+  transition: height 0.4s ease, filter 0.4s ease;
+}
+nav#navbar.scrolled .nav-logo { height: 70px; }
+nav#navbar .nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+  margin: 0 0 0 auto;
+  padding: 0;
+  list-style: none;
+}
+nav#navbar .nav-links a {
+  position: relative;
+  padding: 0;
+  border-radius: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--white, #fff);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  text-transform: none;
+  text-shadow: none;
+  white-space: nowrap;
+  transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+nav#navbar.scrolled .nav-links a { color: var(--slate-dark, #101820); }
+nav#navbar .nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--green, #00c83a);
+  transition: width 0.3s ease;
+}
+nav#navbar .nav-links a:hover,
+nav#navbar .nav-links a.active { color: var(--green, #00c83a); }
+nav#navbar .nav-links a:hover::after,
+nav#navbar .nav-links a.active::after { width: 100%; }
+nav#navbar .nav-links .nav-cta {
+  background: var(--green, #00c83a);
+  color: var(--white, #fff) !important;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(0, 200, 58, 0.3);
+}
+nav#navbar .nav-links .nav-cta:hover {
+  background: var(--green-dark, #008f2f);
+  color: var(--white, #fff) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 200, 58, 0.4);
+}
+nav#navbar .nav-links .nav-cta::after { display: none; }
+nav#navbar .hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  margin: 0;
+  border: 0;
+  background: transparent;
+}
+nav#navbar .hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--white, #fff);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+nav#navbar.scrolled .hamburger span { background: var(--slate-dark, #101820); }
+nav#navbar .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+nav#navbar .hamburger.active span:nth-child(2) { opacity: 0; }
+nav#navbar .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: min(320px, 86vw);
+  height: 100vh;
+  background: var(--white, #fff);
+  z-index: 999;
+  padding: 100px 40px 40px;
+  box-shadow: -10px 0 60px rgba(0, 0, 0, 0.15);
+  transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.mobile-menu.open { right: 0; }
+.mobile-menu a {
+  display: block;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border, #e5e7eb);
+  color: var(--slate-dark, #101820);
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+}
+.mobile-menu a:hover,
+.mobile-menu a.active {
+  color: var(--green, #00c83a);
+  padding-left: 8px;
+}
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  display: block;
+}
+.mobile-menu-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.hero-bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.04);
+  transition: transform 8s ease;
+}
+.hero-section:hover .hero-bg-video { transform: scale(1); }
+@media (max-width: 1100px) {
+  nav#navbar .nav-links { gap: 22px; }
+  nav#navbar .nav-links a { font-size: 13px; }
+}
+@media (max-width: 980px) {
+  nav#navbar,
+  nav#navbar.scrolled {
+    padding: 14px 22px;
+  }
+  nav#navbar .nav-logo { height: 86px; }
+  nav#navbar.scrolled .nav-logo { height: 60px; }
+  nav#navbar .nav-links { display: none !important; }
+  nav#navbar .hamburger { display: flex !important; }
+}
+@media (min-width: 981px) {
+  nav#navbar .hamburger { display: none !important; }
+}
+/* === END HUGEFIN HOMEPAGE NAV SYNC === */
+/* === FOOTER SOCIAL BUTTON FIX === */
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+.footer-socials a,
+.footer-socials .social-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  color: rgba(255,255,255,0.72);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+.footer-socials a:hover,
+.footer-socials .social-btn:hover {
+  background: var(--green, #00c83a);
+  border-color: var(--green, #00c83a);
+  color: var(--white, #fff);
+  transform: translateY(-2px);
+}
+/* === END FOOTER SOCIAL BUTTON FIX === */
+/* === HUGEFIN MEDIA BACKGROUND PASS === */
+.stats-section {
+  background-image:
+    linear-gradient(135deg, rgba(7,16,10,0.90), rgba(7,16,10,0.82)),
+    url('media/unsplash-1494526585095-c41746248156-5c5b434018b0.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.values-section {
+  background-image:
+    linear-gradient(135deg, rgba(255,255,255,0.93), rgba(247,250,248,0.88)),
+    url('media/unsplash-1504384308090-c894fdcc538d-381cdea0ef12.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.process-section {
+  background-image:
+    linear-gradient(135deg, rgba(8,17,11,0.90), rgba(8,17,11,0.82)),
+    url('media/unsplash-1554224155-8d04cb21cd6c-cb8af03ebf1b.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.cta-section {
+  background-image:
+    linear-gradient(135deg, rgba(0,85,32,0.86), rgba(8,17,11,0.86)),
+    url('media/unsplash-1556761175-b413da4baf72-4c15e9f5093c.jpg');
+  background-size: cover;
+  background-position: center;
+}
+/* === END HUGEFIN MEDIA BACKGROUND PASS === */
+/* === HOMEPAGE TRANSLUCENT NAVBAR OVERRIDE === */
+nav#navbar,
+.site-header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1000 !important;
+  box-sizing: border-box !important;
+  padding: 4px max(50px, calc((100vw - 1500px) / 2)) !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  transition: all 0.4s ease !important;
+}
+
+nav#navbar.scrolled,
+nav.scrolled,
+.site-header.scrolled {
+  background: rgba(13, 26, 16, 0.82) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.08) !important;
+  border-bottom: 0 !important;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+}
+
+.site-header .navbar {
+  width: min(1500px, calc(100% - 100px));
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav#navbar .nav-logo,
+.site-header .nav-logo img,
+.site-header .nav-logo {
+  height: 120px !important;
+  width: auto !important;
+  transition: height 0.4s ease, filter 0.4s ease !important;
+}
+
+nav#navbar.scrolled .nav-logo,
+.site-header.scrolled .nav-logo img,
+.site-header.scrolled .nav-logo {
+  height: 70px !important;
+}
+
+nav#navbar .nav-links,
+.site-header .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+nav#navbar .nav-links a,
+.site-header .nav-links a,
+.site-header .nav-links > li > a {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff !important;
+  letter-spacing: 0.02em;
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav#navbar.scrolled .nav-links a,
+.site-header.scrolled .nav-links a,
+.site-header.scrolled .nav-links > li > a {
+  color: #fff !important;
+}
+
+nav#navbar .nav-links a::after,
+.site-header .nav-links a::after,
+.site-header .nav-links > li > a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--green, #00c83a);
+  transition: width 0.3s ease;
+}
+
+nav#navbar .nav-links a:hover::after,
+nav#navbar .nav-links a.active::after,
+.site-header .nav-links a:hover::after,
+.site-header .nav-links a.active::after,
+.site-header .nav-links > li > a:hover::after,
+.site-header .nav-links > li > a.active::after {
+  width: 100%;
+}
+
+nav#navbar .nav-links a:hover,
+nav#navbar .nav-links a.active,
+.site-header .nav-links a:hover,
+.site-header .nav-links a.active,
+.site-header .nav-links > li > a:hover,
+.site-header .nav-links > li > a.active {
+  color: var(--green, #00c83a) !important;
+}
+
+nav#navbar .nav-links .nav-cta,
+.site-header .btn-cta,
+.site-header .nav-cta {
+  background: var(--green, #00c83a) !important;
+  color: #fff !important;
+  padding: 10px 24px !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 16px rgba(0, 200, 58, 0.3) !important;
+}
+
+nav#navbar .nav-links .nav-cta:hover,
+.site-header .btn-cta:hover,
+.site-header .nav-cta:hover {
+  background: var(--green-dark, #008f2f) !important;
+  color: #fff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 200, 58, 0.4) !important;
+}
+
+nav#navbar .nav-links .nav-cta::after,
+.site-header .btn-cta::after,
+.site-header .nav-cta::after {
+  display: none !important;
+}
+
+nav#navbar .hamburger span,
+nav#navbar.scrolled .hamburger span,
+.site-header .hamburger span,
+.site-header.scrolled .hamburger span {
+  background: #fff !important;
+}
+
+@media (max-width: 768px) {
+  nav#navbar,
+  nav#navbar.scrolled,
+  .site-header,
+  .site-header.scrolled {
+    padding: 4px 22px !important;
+  }
+
+  nav#navbar .nav-logo,
+  .site-header .nav-logo img,
+  .site-header .nav-logo {
+    height: 86px !important;
+  }
+
+  nav#navbar.scrolled .nav-logo,
+  .site-header.scrolled .nav-logo img,
+  .site-header.scrolled .nav-logo {
+    height: 60px !important;
+  }
+}
+/* === END HOMEPAGE TRANSLUCENT NAVBAR OVERRIDE === */
+/* === HUGEFIN HERO VIDEO SYNC === */
+.hero-bg,
+.about-hero-bg,
+.service-hero,
+.hero-section .hero-bg,
+.tf-hero__bg {
+  background: var(--slate-dark, #0d1a10) !important;
+  overflow: hidden;
+}
+
+.about-hero-bg {
+  transform: none !important;
+}
+
+.about-hero-video,
+.hero-bg video,
+.hero-video,
+.hero-bg-video,
+.tf-hero__video {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  transform: none !important;
+  z-index: 0 !important;
+  opacity: 1 !important;
+}
+
+.hero > .hero-bg::after,
+.about-hero-bg::after {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  background:
+    linear-gradient(90deg, rgba(13,26,16,0.72) 0%, rgba(13,26,16,0.48) 45%, rgba(13,26,16,0.24) 100%),
+    linear-gradient(to top, rgba(13,26,16,0.68), rgba(13,26,16,0.08) 55%) !important;
+}
+
+.service-hero .hero-overlay,
+.hero-section .hero-overlay,
+.tf-hero__overlay {
+  background:
+    linear-gradient(90deg, rgba(13,26,16,0.72) 0%, rgba(13,26,16,0.48) 48%, rgba(13,26,16,0.26) 100%),
+    linear-gradient(to top, rgba(13,26,16,0.68), rgba(13,26,16,0.08) 58%) !important;
+  z-index: 1 !important;
+}
+
+.hero-grid-overlay,
+.hero-grid {
+  z-index: 1 !important;
+  opacity: 0.72 !important;
+}
+
+.about-hero-content,
+.hero .hero-content,
+.service-hero .hero-content,
+.hero-section .hero-content,
+.tf-hero__content,
+.hero-panel,
+.hero-glass-card,
+.hero-stats,
+.hero-scroll,
+.scroll-cue,
+.hero-scroll-cue,
+.hero-scroll-hint {
+  position: relative;
+  z-index: 2 !important;
+}
+
+.hero > .hero-bg img {
+  display: none !important;
+}
+
+#home.hero .hero-content {
+  width: min(1500px, calc(100% - 100px)) !important;
+  margin-inline: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-top: 100px !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.82fr) !important;
+  gap: 80px !important;
+  align-items: center !important;
+}
+
+#home.hero .hero-left {
+  max-width: 680px;
+}
+
+.hero .container.hero-content {
+  width: auto !important;
+  margin-left: max(50px, calc((100vw - 1500px) / 2)) !important;
+  margin-right: max(50px, calc((100vw - 1500px) / 2)) !important;
+}
+
+@media (max-width: 900px) {
+  #home.hero .hero-content {
+    width: calc(100% - 40px) !important;
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    padding-top: 110px !important;
+  }
+
+  .hero .container.hero-content {
+    width: auto !important;
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+  }
+}
+/* === END HUGEFIN HERO VIDEO SYNC === */
+</style>
+</head>
+<body>
+<div id="progress-bar"></div>
+<button class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</button>
+
+<!-- NAVIGATION -->
+<nav id="navbar">
+  <a href="homepage.html#home" aria-label="HugeFin home"><img src="media/HugeFin_logo.png" alt="HugeFin Finance & Consultants" class="nav-logo"></a>
+  <div class="nav-links">
+    <a href="homepage.html#home">Home</a>
+    <a href="homepage.html#services">Services</a>
+    <a href="homepage.html#industries">Industries</a>
+    <a href="about-us.html" class="active">About</a>
+    <a href="hugefin-partners.html">Partners</a>
+    <a href="homepage.html#contact">Contact</a>
+    <a href="homepage.html#contact" class="nav-cta">Get Funded</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu-overlay" id="mobileOverlay" aria-hidden="true"></div>
+<div class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <a href="homepage.html#home" class="mobile-link">Home</a>
+  <a href="homepage.html#services" class="mobile-link">Services</a>
+  <a href="homepage.html#industries" class="mobile-link">Industries</a>
+  <a href="about-us.html" class="mobile-link active">About</a>
+  <a href="hugefin-partners.html" class="mobile-link">Partners</a>
+  <a href="homepage.html#contact" class="mobile-link">Contact</a>
+  <a href="homepage.html#contact" class="mobile-link" style="color:var(--green);font-weight:700;margin-top:16px;">Get Funded</a>
+</div>
+
+<main>
+  <section class="about-hero" id="top">
+    <div class="about-hero-bg" aria-hidden="true">
+      <video class="about-hero-video" autoplay muted loop playsinline preload="auto">
+        <source src="media/hf-hero-about.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero-grid-overlay" aria-hidden="true"></div>
+    <div class="about-hero-content">
+      <div>
+        <div class="hero-badge">About HugeFin</div>
+        <h1 class="hero-title">Capital advisory built on <span>clarity, discipline</span> and execution.</h1>
+        <p class="hero-sub">HugeFin Finance & Consultants helps businesses, developers and trade-led companies move from funding requirement to lender-ready mandate with sharper structuring, documentation and capital access.</p>
+        <div class="hero-actions">
+          <a href="homepage.html#contact" class="btn-primary">Start a Funding Discussion &rarr;</a>
+          <a href="#story" class="btn-secondary">Explore Our Approach</a>
+        </div>
+      </div>
+
+      <div class="hero-panel">
+        <div class="hero-card-stack">
+          <div class="hero-card">
+            <div class="hero-card-kicker">Advisory Focus</div>
+            <div class="hero-card-title">Structured mandates across core funding verticals</div>
+            <div class="hero-card-val">4<span>+</span></div>
+            <div class="hero-card-label">Real estate, corporate, trade and private funding</div>
+          </div>
+          <div class="hero-card-row">
+            <div class="hero-card-mini">
+              <div class="hero-card-kicker">Method</div>
+              <div class="hero-card-val">360&deg;</div>
+              <div class="hero-card-label">Documentation review</div>
+            </div>
+            <div class="hero-card-mini">
+              <div class="hero-card-kicker">Network</div>
+              <div class="hero-card-val">India</div>
+              <div class="hero-card-label">Capital partner access</div>
+            </div>
+          </div>
+          <div class="hero-card">
+            <div class="hero-card-kicker">Positioning</div>
+            <div class="hero-card-title">We translate complex borrowing needs into bankable capital stories.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust-strip">
+    <div class="trust-inner">
+      <div class="trust-label">Capital advisory for</div>
+      <div class="trust-logos">
+        <div class="trust-logo-item">Real Estate</div>
+        <div class="trust-logo-item">Corporate Finance</div>
+        <div class="trust-logo-item">Trade Finance</div>
+        <div class="trust-logo-item">Private Funding</div>
+        <div class="trust-logo-item">Infrastructure</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="story-section" id="story">
+    <div class="container story-grid">
+      <div class="image-collage reveal-left">
+        <div class="collage-main"><img src="media/cargo_img.jpg" alt="Container vessel at port representing trade finance and working capital movement"></div>
+        <div class="collage-small"><img src="media/1234.jpg" alt="Finance consultants reviewing a capital mandate with a client"></div>
+        <div class="collage-badge"><strong>Built</strong><span>for capital-heavy businesses</span></div>
+      </div>
+
+      <div class="story-copy reveal-right">
+        <div class="section-tag">Our Story</div>
+        <h2 class="section-title">We exist to make serious funding conversations <span>clearer and more executable.</span></h2>
+        <p>Capital requirements are rarely simple. A builder may need structured project funding, a manufacturer may need working capital, an importer may need trade finance, and a growing company may need private capital with the right terms.</p>
+        <p>HugeFin was shaped around that reality. We combine advisory thinking with practical execution: understanding the mandate, cleaning the documentation, identifying suitable capital routes and helping clients communicate their case with confidence.</p>
+        <div class="story-points">
+          <div class="story-point">
+            <div class="point-num">01</div>
+            <div class="point-title">Borrower-first clarity</div>
+            <div class="point-desc">We begin with the commercial requirement, not a generic product pitch.</div>
+          </div>
+          <div class="story-point">
+            <div class="point-num">02</div>
+            <div class="point-title">Institutional packaging</div>
+            <div class="point-desc">Mandates are prepared with stronger narratives, documents and decision context.</div>
+          </div>
+          <div class="story-point">
+            <div class="point-num">03</div>
+            <div class="point-title">Relevant capital routes</div>
+            <div class="point-desc">We align requirements with realistic lender, investor and funding partner options.</div>
+          </div>
+          <div class="story-point">
+            <div class="point-num">04</div>
+            <div class="point-title">Execution discipline</div>
+            <div class="point-desc">Every stage is handled with follow-through, confidentiality and practical timelines.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid reveal">
+        <div class="stat-card">
+          <div class="stat-num">4<span>+</span></div>
+          <div class="stat-label">Funding Verticals</div>
+          <div class="stat-desc">Focused advisory coverage</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">24<span>h</span></div>
+          <div class="stat-label">Initial Response</div>
+          <div class="stat-desc">Fast first-level assessment</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">360<span>&deg;</span></div>
+          <div class="stat-label">Mandate Review</div>
+          <div class="stat-desc">Documents, structure and fit</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">1</div>
+          <div class="stat-label">Capital Partner</div>
+          <div class="stat-desc">Coordinating your path forward</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="values-section" id="values">
+    <div class="container">
+      <div class="values-header reveal">
+        <div>
+          <div class="section-tag">What Guides Us</div>
+          <h2 class="section-title">Principles that keep every mandate <span>sharp.</span></h2>
+        </div>
+        <p class="section-sub">Good funding advisory is not only about access. It is about knowing what to ask, what to prepare, how to position the transaction and when to push for better terms.</p>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-card reveal">
+          <div class="value-icon">C</div>
+          <h3 class="value-title">Clarity Before Capital</h3>
+          <p class="value-desc">We define the funding need, repayment logic, collateral position and business context before approaching capital providers.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-icon">D</div>
+          <h3 class="value-title">Documentation Discipline</h3>
+          <p class="value-desc">Cleaner documents create cleaner conversations. We help organize the information lenders need to move faster.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-icon">S</div>
+          <h3 class="value-title">Structured Negotiation</h3>
+          <p class="value-desc">We focus on fit, cost, tenure, security, covenants and practical execution instead of chasing one-dimensional approvals.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-icon">T</div>
+          <h3 class="value-title">Trust-Led Advisory</h3>
+          <p class="value-desc">Capital mandates involve sensitive information. We handle client requirements with discretion and long-term responsibility.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-section" id="expertise">
+    <div class="container">
+      <div class="services-header reveal">
+        <div class="section-tag">Our Expertise</div>
+        <h2 class="section-title">Advisory across the places capital gets <span>complex.</span></h2>
+        <p class="section-sub">HugeFin brings a focused approach to high-value funding requirements where structure, lender confidence and execution timing matter.</p>
+      </div>
+
+      <div class="about-services-grid">
+        <a class="about-service-card reveal" href="real-estate.html">
+          <img src="media/buildings.jpg" alt="Commercial towers representing real estate funding">
+          <div class="service-content">
+            <div class="service-index">01</div>
+            <h3 class="service-title">Real Estate Funding</h3>
+            <p class="service-desc">Project finance, construction funding and structured capital for builders and developers.</p>
+          </div>
+        </a>
+        <a class="about-service-card reveal" href="corporate-funding.html">
+          <img src="media/1234.jpg" alt="Corporate finance advisory discussion">
+          <div class="service-content">
+            <div class="service-index">02</div>
+            <h3 class="service-title">Corporate Funding</h3>
+            <p class="service-desc">Working capital, expansion finance and tailored borrowing routes for operating companies.</p>
+          </div>
+        </a>
+        <a class="about-service-card reveal" href="trade-finance.html">
+          <img src="media/cargo_img.jpg" alt="Cargo vessel representing import export trade finance">
+          <div class="service-content">
+            <div class="service-index">03</div>
+            <h3 class="service-title">Trade Finance</h3>
+            <p class="service-desc">Import, export and supply chain finance support for transaction-heavy businesses.</p>
+          </div>
+        </a>
+        <a class="about-service-card reveal" href="private-funding.html">
+          <img src="media/trade_img2.jpg" alt="Container logistics representing private capital movement">
+          <div class="service-content">
+            <div class="service-index">04</div>
+            <h3 class="service-title">Private Funding</h3>
+            <p class="service-desc">Alternative routes for urgent, structured or non-standard funding requirements.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="process-section" id="approach">
+    <div class="container">
+      <div class="process-header reveal">
+        <div>
+          <div class="section-tag">How We Work</div>
+          <h2 class="section-title">A practical process from requirement to capital conversation.</h2>
+        </div>
+        <p class="section-sub">Our role is to reduce friction between the client's business reality and the capital provider's decision framework.</p>
+      </div>
+
+      <div class="process-timeline">
+        <div class="process-card reveal" data-step="01">
+          <div class="process-kicker">Discover</div>
+          <h3 class="process-title">Understand the Mandate</h3>
+          <p class="process-desc">We assess the business, funding amount, timeline, collateral, end use and repayment path.</p>
+        </div>
+        <div class="process-card reveal" data-step="02">
+          <div class="process-kicker">Prepare</div>
+          <h3 class="process-title">Make It Lender-Ready</h3>
+          <p class="process-desc">Financials, project details, transaction documents and supporting data are organized into a sharper case.</p>
+        </div>
+        <div class="process-card reveal" data-step="03">
+          <div class="process-kicker">Match</div>
+          <h3 class="process-title">Map Suitable Capital</h3>
+          <p class="process-desc">We identify relevant routes and partners based on ticket size, sector, security and structure.</p>
+        </div>
+        <div class="process-card reveal" data-step="04">
+          <div class="process-kicker">Execute</div>
+          <h3 class="process-title">Support the Closing Path</h3>
+          <p class="process-desc">We coordinate conversations, clarify requirements and help move the transaction toward closure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="leadership-section" id="leadership">
+    <div class="container leadership-grid">
+      <div class="leadership-copy reveal-left">
+        <div class="section-tag">Our Advisory Standard</div>
+        <h2 class="section-title">Calm, confidential guidance for capital decisions that matter.</h2>
+        <p class="section-sub">Funding conversations can be high-pressure. HugeFin's advisory style is designed to bring order to that pressure: practical questions, stronger preparation and a measured path to market.</p>
+        <div class="principles-list">
+          <div class="principle">
+            <div class="principle-mark">01</div>
+            <div>
+              <h3>We protect the mandate narrative.</h3>
+              <p>A clear story helps capital providers understand why the funding is required, how it will be used and how it can be serviced.</p>
+            </div>
+          </div>
+          <div class="principle">
+            <div class="principle-mark">02</div>
+            <div>
+              <h3>We stay realistic about capital fit.</h3>
+              <p>Better advisory means matching the requirement to the right structure, not forcing every case through the same route.</p>
+            </div>
+          </div>
+          <div class="principle">
+            <div class="principle-mark">03</div>
+            <div>
+              <h3>We value long-term trust.</h3>
+              <p>Every engagement is handled with confidentiality, honest assessment and respect for the client's business priorities.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="leadership-media reveal-right">
+        <img src="media/1234.jpg" alt="Advisory conversation between finance consultants and client">
+        <div class="leadership-note">
+          <strong>HugeFin's role is simple:</strong>
+          <span>Help businesses approach funding with better preparation, sharper positioning and a serious execution mindset.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-panel reveal">
+        <div>
+          <h2 class="cta-title">Have a funding mandate that needs <span>structure?</span></h2>
+          <p class="cta-copy">Share your requirement with the HugeFin team and we will help assess the most practical next step for your capital requirement.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="homepage.html#contact" class="btn-primary">Get Funded &rarr;</a>
+          <a href="tel:+919876543210" class="btn-secondary">Call HugeFin</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="media/HugeFin_logo.png" alt="HugeFin" class="footer-logo">
+      <p class="footer-tagline">India's institutional-grade capital advisory firm for real estate, corporate, trade and private funding mandates.</p>
+      <div class="footer-socials">
+          <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-btn" aria-label="Instagram">IG</a>
+          <a href="#" class="social-btn" aria-label="X (Twitter)">X</a>
+        </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <div class="footer-links">
+        <a href="real-estate.html">Real Estate Funding</a>
+        <a href="corporate-funding.html">Corporate Funding</a>
+        <a href="private-funding.html">Private Funding</a>
+        <a href="trade-finance.html">Trade Finance</a>
+        <a href="homepage.html#services">Project Finance</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <div class="footer-links">
+        <a href="about-us.html">About HugeFin</a>
+        <a href="homepage.html#process">Our Process</a>
+        <a href="homepage.html#testimonials">Client Stories</a>
+        <a href="homepage.html#faq">FAQ</a>
+        <a href="homepage.html#contact">Contact Us</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Industries</div>
+      <div class="footer-links">
+        <a href="homepage.html#industries">Builders & Developers</a>
+        <a href="homepage.html#industries">EPC Companies</a>
+        <a href="homepage.html#industries">Infrastructure</a>
+        <a href="homepage.html#industries">Manufacturing</a>
+        <a href="homepage.html#industries">Logistics</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">&copy; 2026 HugeFin Finance & Consultants. All rights reserved.</div>
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Disclaimer</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const progressBar = document.getElementById('progress-bar');
+const navbar = document.getElementById('navbar');
+const backToTop = document.getElementById('backToTop');
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileOverlay = document.getElementById('mobileOverlay');
+
+function handleScroll() {
+  const docH = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = docH > 0 ? (window.scrollY / docH) * 100 : 0;
+  progressBar.style.width = pct + '%';
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+  backToTop.classList.toggle('visible', window.scrollY > 400);
+}
+
+function closeMenu() {
+  hamburger.classList.remove('active');
+  mobileMenu.classList.remove('open');
+  mobileOverlay.classList.remove('active');
+}
+
+window.addEventListener('scroll', handleScroll, { passive: true });
+window.addEventListener('load', handleScroll);
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  mobileMenu.classList.toggle('open');
+  mobileOverlay.classList.toggle('active');
+});
+mobileOverlay.addEventListener('click', closeMenu);
+document.querySelectorAll('.mobile-link').forEach(link => link.addEventListener('click', closeMenu));
+backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', event => {
+    const target = document.querySelector(anchor.getAttribute('href'));
+    if (!target) return;
+    event.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+</script>
+<!-- HUGEFIN_NAV_SYNC_SCRIPT -->
+<script>
+(function () {
+  function initHugeFinNav() {
+    const navbar = document.getElementById('navbar');
+    const oldHamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+
+    if (navbar) {
+      const syncScrolled = () => navbar.classList.toggle('scrolled', window.scrollY > 60);
+      window.addEventListener('scroll', syncScrolled, { passive: true });
+      syncScrolled();
+    }
+
+    if (!oldHamburger || !mobileMenu || !mobileOverlay) return;
+
+    const hamburger = oldHamburger.cloneNode(true);
+    oldHamburger.parentNode.replaceChild(hamburger, oldHamburger);
+
+    const closeMenu = () => {
+      hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileMenu.classList.remove('open');
+      mobileOverlay.classList.remove('active');
+      mobileOverlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    };
+
+    const openMenu = () => {
+      hamburger.classList.add('active');
+      hamburger.setAttribute('aria-expanded', 'true');
+      mobileMenu.classList.add('open');
+      mobileOverlay.classList.add('active');
+      mobileOverlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    };
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
+    });
+    mobileOverlay.addEventListener('click', closeMenu);
+    mobileMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHugeFinNav);
+  } else {
+    initHugeFinNav();
+  }
+})();
+</script>
+<!-- END_HUGEFIN_NAV_SYNC_SCRIPT -->
+</body>
+</html>
